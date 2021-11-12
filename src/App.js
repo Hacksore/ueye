@@ -18,6 +18,7 @@ const APPS = {
 };
 
 const API_URL = process.env.NODE_ENV === "production" ? "https://ueye-api.hacksore.workers.dev" : "";
+console.log(API_URL)
 
 const Headers = () => {
   return (
