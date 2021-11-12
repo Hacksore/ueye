@@ -17,6 +17,8 @@ const APPS = {
   },
 };
 
+const API_URL = process.env.NODE_ENV === "production" ? "https://ueye-api.hacksore.workers.dev" : "/stats";
+
 const Headers = () => {
   return (
     <Box
@@ -46,7 +48,7 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("/stats")
+    fetch(API_URL)
     .then(res => res.json())
     .then(data => {
       setData(data);
